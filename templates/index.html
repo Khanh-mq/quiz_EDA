@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Quiz Game</h1>
+    <div>
+        <label for="player_id">Your Player ID:</label>
+        <input type="text" id="player_id" placeholder="e.g., user1">
+        <button onclick="joinGame()">Join Game</button>
+    </div>
+    <div id="question" style="display:none;">
+        <p id="question_text"></p>
+        <div id="answers"></div>
+        <p id="timer">Time left: 30s</p>
+    </div>
+    <div id="result"></div>
+    <h2>Leaderboard</h2>
+    <ul id="leaderboard"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
